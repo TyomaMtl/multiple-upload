@@ -33,7 +33,7 @@ function showList(files)
 	for(let i = 0; files.length > i; i++)
 	{
 		const li  = document.createElement('li');
-		const img = document.createElement("img");
+		const img = document.createElement('img');
 		const span = document.createElement('span');
 
 		span.innerHTML = files[i]['name']
