@@ -35,8 +35,13 @@ function showList(files)
 		const li  = document.createElement('li');
 		const img = document.createElement('img');
 		const span = document.createElement('span');
-
+		const info = document.createElement('div');
+		
+		// file name
 		span.innerHTML = files[i]['name']
+
+		// info
+		info.innerHTML = octectToMo(files[i]['size']) + ' - ' + files[i]['type']
 
 		// create img
 	    img.src = window.URL.createObjectURL(files[i]);
@@ -47,6 +52,12 @@ function showList(files)
 
 	    li.appendChild(img)
 	    li.appendChild(span)
+	    li.appendChild(info)
 	    fileList.appendChild(li)
 	}
+}
+
+function octectToMo(octect)
+{
+	return Math.ceil(octect / 1048576) + ' Mo'
 }
